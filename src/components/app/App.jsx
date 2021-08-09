@@ -1,6 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import Resty from '../containers/Resty.jsx';
+import Resty from '../../containers/Resty.jsx';
 
 export default function App() {
   return (
@@ -14,4 +13,3 @@ export default function App() {
 }
 
 
-ReactDOM.render(<App />, document.getElementById('app'));

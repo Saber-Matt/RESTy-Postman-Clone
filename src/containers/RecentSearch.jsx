@@ -1,8 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Recent from 'Recent';
+import Recent from '../components/Recent.jsx';
 
-const RecentSearch = ({ recent, onClcik }) => {
+
+const RecentSearch = ({ recent, onClick }) => {
 
   const recentItems = recent.map((recentItem, index) => (
     <li key={index} onClick={onClick}>
@@ -15,7 +16,22 @@ const RecentSearch = ({ recent, onClcik }) => {
     </li>
   ));
 
-  return <ul>{recentItems}</ul>;
+  if(recent === []) {
+    return (
+      <section>
+        <h1>Recent Searches</h1>
+        <ul>Try fetching something.</ul>
+      </section>
+    );
+  
+  } else { 
+    return (
+      <section>
+        <h1>Recent Searches</h1>
+        <ul>{recentItems}</ul>
+      </section>
+    );
+  }
 };
 
 RecentSearch.propTypes = {

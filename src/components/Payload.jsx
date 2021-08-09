@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 
 const Payload = ({ payload }) => (
   <>
@@ -9,8 +9,8 @@ const Payload = ({ payload }) => (
   </>
 );
 
-Payload.propTypes = {
-  payload: PropTypes.string
-};
+// Payload.propTypes = {
+// payload: PropTypes.string
+// };
 
 export default Payload;

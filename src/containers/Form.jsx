@@ -1,47 +1,27 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Search from './search/Search';
-import Method from './method/Method';
-import Body from './body/Body';
-import styles from './Form.css';
+import Body from './Body';
+import Method from '../components/Method';
 
-export default class Form extends Component {
-  render ({ search, method, body, onChange, onSubmit }) => (
-    <form onSubmit={onSubmit} className={styles.Form}>
-      <>
-        <Search 
-          search={search}
-          onChange={onChange} 
-        />
-        <button>Send</button>
-      </>
-      <Method 
-        method={method}
-        onChange={onChange} 
-      />
-      <Body 
-        body={body}
-        onChange={onChange} 
-      />
-    </form>
-  );
-  
-  Form.propTypes = {
-    search: PropTypes.string,
-    method: PropTypes.string,
-    body: PropTypes.string,
-    onChange: PropTypes.func,
-    onSubmit: PropTypes.func,
-  };
-  
-  render() {
-    return (
+const Form = ({ search, method, body, onChange, onSubmit }) => (
+  <>
+    <form onSubmit={onSubmit} >
       <div>
-        
+        <button>Send</button>
       </div>
-    )
-  }
-
+      <Body
+        body={body}
+        onChange={onChange}
+      />
+      <Method/>
+    </form>
+  </>
+);
+Form.propTypes = {
+  search: PropTypes.string,
+  method: PropTypes.string,
+  body: PropTypes.string,
+  onChange: PropTypes.func,
+  onSubmit: PropTypes.func,
+};
 export default Form;
-
-
